@@ -212,17 +212,17 @@ textarea {
     text-transform: capitalize;
 }
 
-.task-form,
-.single-task-form {
+.product-form,
+.single-product-form {
     width: 90vw;
     max-width: var(--fixed-width);
     margin: 0 auto;
     margin-top: 6rem;
 }
-.task-form h4 {
+.product-form h4 {
     text-align: center;
 }
-.task-form .form-alert {
+.product-form .form-alert {
     margin-top: 1rem;
 }
 .submit-btn {
@@ -233,7 +233,7 @@ textarea {
     .form-control {
         display: flex;
     }
-    .task-input {
+    .product-input {
         border-radius: 0;
         border-top-left-radius: var(--borderRadius);
         border-bottom-left-radius: var(--borderRadius);
@@ -328,7 +328,7 @@ form > :last-child {
 .empty-list {
     text-align: center;
 }
-.tasks-container {
+.products-container {
     width: 100%;
     width: 90vw;
     max-width: var(--fixed-width);
@@ -336,11 +336,11 @@ form > :last-child {
     margin-top: 2rem;
     padding-bottom: 4rem;
 }
-.tasks {
+.products {
     display: grid;
     gap: 1rem;
 }
-.single-task {
+.single-product {
     padding: 1rem 2.5rem;
     background: var(--white);
     border-radius: var(--borderRadius);
@@ -350,35 +350,35 @@ form > :last-child {
     justify-content: space-between;
     align-items: center;
 }
-.single-task:hover {
+.single-product:hover {
     box-shadow: var(--shadow-4);
 }
-.single-task h5 {
+.single-product h5 {
     margin-bottom: 0;
 }
-.single-task span {
+.single-product span {
     display: inline-block;
     width: 0.5rem;
     height: 0.5rem;
     margin-left: -1.25rem;
     margin-right: 1.5rem;
 }
-.single-task .fa-check-circle {
+.single-product .fa-check-circle {
     font-size: 1rem;
     color: var(--green-dark);
     visibility: hidden;
 }
-.task-completed h5 {
+.product-completed h5 {
     text-decoration: line-through;
 }
-.task-completed .fa-check-circle {
+.product-completed .fa-check-circle {
     visibility: visible;
 }
 .loading-text {
     visibility: hidden;
 }
 /* Task Links */
-.task-links {
+.product-links {
     display: flex;
     align-items: center;
     gap: 0 0.5rem;
@@ -401,16 +401,16 @@ form > :last-child {
    SINGLE TASK
 *************/
 
-.single-task-form h4 {
+.single-product-form h4 {
     text-align: center;
 }
 
-.single-task-form p {
+.single-product-form p {
     margin-bottom: 0;
     margin-top: 0;
 }
 
-.single-task-form .form-control {
+.single-product-form .form-control {
     display: grid;
     grid-template-columns: 150px 1fr;
     align-items: center;
@@ -419,12 +419,12 @@ form > :last-child {
     margin-bottom: 0.75rem;
 }
 
-.single-task-form label {
+.single-product-form label {
     margin-bottom: 0;
     font-size: 1rem;
 }
 
-.task-edit-completed {
+.product-edit-completed {
     width: auto;
 }
 .back-link {
@@ -440,7 +440,7 @@ form > :last-child {
     opacity: 0.75;
 }
 
-.single-task-form .form-alert {
+.single-product-form .form-alert {
     text-align: center;
     margin-top: 1rem;
 }

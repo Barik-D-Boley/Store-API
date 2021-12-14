@@ -1,0 +1,164 @@
+{
+    "shoes": [
+        {
+            "name": "Air Vapormax 2021 FK",
+            "price": 200,
+            "featured": false,
+            "rating": 4.9,
+            "createdAt": "2021-12-14T14:12:43.511Z",
+            "company": "nike"
+        },
+        {
+            "name": "Air Max 90",
+            "price": 120,
+            "featured": false,
+            "rating": 4.8,
+            "createdAt": "2021-12-14T14:12:43.511Z",
+            "company": "nike"
+        },
+        {
+            "name": "SB Zoom Blazer Mid Premium",
+            "price": 105,
+            "featured": true,
+            "rating": 4.3,
+            "createdAt": "2021-12-14T14:12:43.511Z",
+            "company": "nike"
+        },
+        {
+            "name": "Air Force 1",
+            "price": 160,
+            "featured": false,
+            "rating": 4.7,
+            "createdAt": "2021-12-14T14:12:43.511Z",
+            "company": "nike"
+        },
+        {
+            "name": "Air Max 90 SE",
+            "price": 130,
+            "featured": false,
+            "rating": 0,
+            "createdAt": "2021-12-14T14:12:43.511Z",
+            "company": "nike"
+        },
+        {
+            "name": "Hermes Boots",
+            "price": 130,
+            "featured": false,
+            "rating": 4,
+            "createdAt": "2021-12-14T14:12:43.511Z",
+            "company": "terraria"
+        },
+        {
+            "name": "Dunerider Boots",
+            "price": 150,
+            "featured": false,
+            "rating": 4.2,
+            "createdAt": "2021-12-14T14:12:43.511Z",
+            "company": "terraria"
+        },
+        {
+            "name": "Spectre Boots",
+            "price": 180,
+            "featured": false,
+            "rating": 4.5,
+            "createdAt": "2021-12-14T14:12:43.511Z",
+            "company": "terraria"
+        },
+        {
+            "name": "Lightning Boots",
+            "price": 210,
+            "featured": true,
+            "rating": 4.8,
+            "createdAt": "2021-12-14T14:12:43.511Z",
+            "company": "terraria"
+        },
+        {
+            "name": "Frostspark Boots",
+            "price": 220,
+            "featured": false,
+            "rating": 4.8,
+            "createdAt": "2021-12-14T14:12:43.511Z",
+            "company": "terraria"
+        },
+        {
+            "name": "Terraspark Boots",
+            "price": 250,
+            "featured": false,
+            "rating": 4.9,
+            "createdAt": "2021-12-14T14:12:43.511Z",
+            "company": "terraria"
+        },
+        {
+            "name": "Boost 350 V2 CMPCT 'Slate Blue'",
+            "price": 273,
+            "featured": true,
+            "rating": 4.1,
+            "createdAt": "2021-12-14T14:12:43.511Z",
+            "company": "yeezy"
+        },
+        {
+            "name": "500 'Brown Clay'",
+            "price": 210,
+            "featured": false,
+            "rating": 4.3,
+            "createdAt": "2021-12-14T14:12:43.511Z",
+            "company": "yeezy"
+        },
+        {
+            "name": "Ultraboost 22 Shoes",
+            "price": 190,
+            "featured": true,
+            "rating": 4.4,
+            "createdAt": "2021-12-14T14:12:43.511Z",
+            "company": "adidas"
+        },
+        {
+            "name": "Kaptir 2.0 SHoes",
+            "price": 85,
+            "featured": false,
+            "rating": 4.6,
+            "createdAt": "2021-12-14T14:12:43.511Z",
+            "company": "adidas"
+        },
+        {
+            "name": "Racer TR21 Shoes",
+            "price": 75,
+            "featured": false,
+            "rating": 5,
+            "createdAt": "2021-12-14T14:12:43.511Z",
+            "company": "adidas"
+        },
+        {
+            "name": "RS-Fast Veggies Men's Sneakers",
+            "price": 110,
+            "featured": true,
+            "rating": 3.9,
+            "createdAt": "2021-12-14T14:12:43.511Z",
+            "company": "puma"
+        },
+        {
+            "name": "RS-DREAMER 2 'The White Jointz' Basketball Shoes",
+            "price": 130,
+            "featured": false,
+            "rating": 4.2,
+            "createdAt": "2021-12-14T14:12:43.511Z",
+            "company": "puma"
+        },
+        {
+            "name": "RS-Fast Tipoff Sneakers",
+            "price": 110,
+            "featured": false,
+            "rating": 4.3,
+            "createdAt": "2021-12-14T14:12:43.511Z",
+            "company": "puma"
+        },
+        {
+            "name": "Suede GUm Sneakers",
+            "price": 70,
+            "featured": false,
+            "rating": 3.7,
+            "createdAt": "2021-12-14T14:12:43.511Z",
+            "company": "puma"
+        }
+    ]
+}

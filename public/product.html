@@ -12,36 +12,36 @@
     <link rel='stylesheet' href='./normalize.css'>
     <link rel='stylesheet' href='./main.css'>
 
-    <title>Task Editor</title>
+    <title>Product Editor</title>
 </head>
 <body>
     <div class='container'>
-        <form class='single-task-form'>
-            <h4>Edit Task</h4>
+        <form class='single-product-form'>
+            <h4>Edit Product</h4>
             <div class='formal-control'>
-                <label>Task ID</label>
-                <p class='task-edit-id'></p>
+                <label>Product ID</label>
+                <p class='product-edit-id'></p>
             </div>
 
             <div class='form-control'>
                 <label for='name'>Name</label>
-                <input type='text' name='name' class='task-edit-name'>
+                <input type='text' name='name' class='product-edit-name'>
             </div>
 
             <div class='form-control'>
                 <label for='completed'>Completed</label>
-                <input type='checkbox' name='completed' class='task-edit-completed'>
+                <input type='checkbox' name='completed' class='product-edit-completed'>
             </div>
-            <button type='submit' class='block btn task-edit-btn'>Edit</button>
+            <button type='submit' class='block btn product-edit-btn'>Edit</button>
             <div class='form-alert'></div>
         </form>
-        <a href='index.html' class='btn back-link'>Back to Tasks</a>
+        <a href='index.html' class='btn back-link'>Back to Products</a>
     </div>
 
     <!-- Axios -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js'
         integrity='sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=='
         crossorigin='anonymous' referrerpolicy='no-referrer'></script>
-    <script src='./edit-task.js'></script>
+    <script src='./edit-product.js'></script>
 </body>
 </html>

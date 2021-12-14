@@ -1,51 +1,51 @@
-const taskIDDOM = document.querySelector('.task-edit-id');
-const taskNameDOM = document.querySelector('.task-edit-name');
-const taskCompleteDOM = document.querySelector('.task-edit-completed');
-const editFormDOM = document.querySelector('.single-task-form');
-const editBtnDOM = document.querySelector('.task-edit-btn');
+const productIDDOM = document.querySelector('.product-edit-id');
+const productNameDOM = document.querySelector('.product-edit-name');
+const productCompleteDOM = document.querySelector('.product-edit-completed');
+const editFormDOM = document.querySelector('.single-product-form');
+const editBtnDOM = document.querySelector('.product-edit-btn');
 const formAlertDOM = document.querySelector('.form-alert');
 const params = window.location.search;
 const id = new URLSearchParams(params).get('id');
 let tempName;
 
-const showTask = async () => {
+const showProduct = async () => {
     try {
-        const { data: {task}, } = await axios.get(`/api/v1/tasks/${id}`);
-        const { _id: taskID, completed, name } = task;
+        const { data: {product}, } = await axios.get(`/api/v1/products/${id}`);
+        const { _id: productID, completed, name } = product;
 
-        taskIDDOM.textContent = taskID;
-        taskNameDOM.value = name;
+        productIDDOM.textContent = productID;
+        productNameDOM.value = name;
         tempName = name;
 
-        if (completed) taskCompleteDOM.checked = true;
+        if (completed) productCompleteDOM.checked = true;
     } catch (error) {
         console.log(error);
     }
 }
-showTask();
+showProduct();
 
 editFormDOM.addEventListener('submit', async (e) => {
     editBtnDOM.textContent = 'Loading...';
     e.preventDefault();
     try {
-        const taskName = taskNameDOM.value;
-        const taskCompleted = taskCompleteDOM.checked;
+        const productName = productNameDOM.value;
+        const productCompleted = productCompleteDOM.checked;
 
-        const { data: {tasks}, } = await axios.patch(`/api/v1/tasks/${id}`, {
-            name: taskName, completed: taskCompleted
+        const { data: {products}, } = await axios.patch(`/api/v1/products/${id}`, {
+            name: productName, completed: productCompleted
         })
 
-        const { _id: taskID, completed, name } = tasks;
-        taskIDDOM.textContent = taskID;
+        const { _id: productID, completed, name } = products;
+        productIDDOM.textContent = productID;
         tempName = name;
 
-        if (completed) taskCompleteDOM.checked = true;
+        if (completed) productCompleteDOM.checked = true;
         formAlertDOM.style.display = 'block';
-        formAlertDOM.textContent = 'Successfully edited task';
+        formAlertDOM.textContent = 'Successfully edited product';
         formAlertDOM.classList.add('text-success')
     } catch (error) {
         console.error(error);
-        taskNameDOM.value = tempName;
+        productNameDOM.value = tempName;
         formAlertDOM.style.display = 'block';
         formAlertDOM.innerHTML = 'Error, please try again'
     }

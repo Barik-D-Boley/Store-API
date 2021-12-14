@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // So what is a schema
-const TaskSchema = new mongoose.Schema({
+const ProductSchema = new mongoose.Schema({
     name: {
         type: String,
         required: [true, 'Must provide your name'],
@@ -14,4 +14,4 @@ const TaskSchema = new mongoose.Schema({
     }
 })
 // This is basic validation not advanced
-module.exports = mongoose.model('Task', TaskSchema)
+module.exports = mongoose.model('Product', ProductSchema)
