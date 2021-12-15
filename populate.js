@@ -1,9 +1,15 @@
-const start = async () => {
+const connectDB = require('./db/connect');
+const Product = require('./models/product');
+const jsonProducts = require('./products.json');
+
+const populateProducts = async () => {
     try {
         await connectDB(process.env.MONGO_URI);
         await Product.deleteMany();
         await Product.create(jsonProducts);
         console.log('Success!!!!');
-        process.exit(0);
-    } catch (error) { res.status(500).json({msg: error}) }
+        // process.exit(0);
+    } catch (error) { console.error(error) }
 }
+
+module.exports = populateProducts;

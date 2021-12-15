@@ -1,17 +1,34 @@
 const mongoose = require('mongoose');
 
-// So what is a schema
 const ProductSchema = new mongoose.Schema({
     name: {
         type: String,
         required: [true, 'Must provide your name'],
         trim: true,
-        maxLength: [20, 'Name cannot be more than 20 characters']
+        maxLength: [100, 'Name cannot be more than 100 characters']
     },
-    completed: {
+    price: {
+        type: Number,
+        required: [true, 'Must provide a price'],
+    },
+    featured: {
         type: Boolean,
-        default: false,
+        default: false
+    },
+    rating: {
+        type: Number,
+        default: undefined
+    },
+    createdAt: {
+        type: Date,
+        default: new Date().toISOString()
+    },
+    company: {
+        type: String,
+        required: [true, 'Must provide a company name'],
+        enum: { values: ['nike', 'terraria', 'yeezy', 'adidas', 'puma'], message: '{VALUE} is not supported' }
     }
-})
+});
+
 // This is basic validation not advanced
-module.exports = mongoose.model('Product', ProductSchema)
+module.exports = mongoose.model('Product', ProductSchema);

@@ -10,29 +10,38 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css' />
     <!-- Created CSS -->
     <link rel='stylesheet' href='./normalize.css'>
-    <link rel='stylesheet' href='./main.css'>
+    <!-- <link rel='stylesheet' href='./main.css'> -->
 
     <title>Product Manager</title>
 </head>
 <body>
-    <form class='product-form'>
+    <!-- Product Creation Form -->
+    <form class='product-form' action='index.html' method='POST'>
         <h4>Product Manager</h4>
-        <div class='form-control'>
-            <input type='text' name='name' class='product-input' placeholder='ex: wash dishes' />
+            <label for='name'>Name:</label>
+            <input type='text' name='name' class='product-input' placeholder='ex: wash dishes' /><br>
+            <label for='price'>Price:</label>
+            <input type='text' name='price' class='product-input' placeholder='ex: 119.99' /><br>
+            <label for='rating'>Rating:</label>
+            <input type='text' name='rating' class='product-input' placeholder='ex: 4.3' /><br>
+            <label for='company'>Company:</label>
+            <input type='text' name='company' class='product-input' placeholder='ex: Puma' /><br>
+            <label for='featured'>Featured:</label>
+            <input type='checkbox' name='featured' class='featured-input' /><br>
             <button type='submit' class='button submit-btn'>Submit</button>
-        </div>
         <div class='form-alert'></div>
     </form>
     
+    <!-- Current Products -->
     <section class='products-container'>
         <p class='loading-text'>Loading...</p>
         <div class='products'></div>
     </section>
 
     <!-- Axios -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js'
+        integrity='sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=='
+        crossorigin='anonymous' referrerpolicy='no-referrer'></script>
     <script src='./browser-app.js'></script>
 </body>
 </html>
