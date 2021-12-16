@@ -1,7 +1,13 @@
 const productsDOM = document.querySelector('.products');
 const loadingDOM = document.querySelector('.loading-text');
 const formDOM = document.querySelector('.product-form');
-const productInputDOM = document.querySelector('.product-input');
+
+const nameInputDOM = document.querySelector('.name-input');
+const priceInputDOM = document.querySelector('.price-input');
+const ratingInputDOM = document.querySelector('.rating-input');
+const companyInputDOM = document.querySelector('.company-input');
+const featuredInputDOM = document.querySelector('.featured-input');
+
 const formAlertDOM = document.querySelector('.form-alert');
 
 // Loading products from api/products
@@ -16,12 +22,20 @@ const showProducts = async () => {
             return;
         }
         const allProducts = products.map((product) => {
-            const { completed, _id: productID, name } = product;
-            return `<div class='single-product ${completed && 'product-completed'}'>
-                        <h5><span><i class='far fa-check-circle'></i></span>${name}</h5>
+            const { _id: productID, name, price, rating, company, featured } = product;
+            
+            return `<div class='single-product'>
+                        <h5>${name}</h5>
+                        <ul>
+                            <li>$${price}</li>
+                            <li>${rating}/5</li>
+                            <li>${company}</li>
+                            <li>${featured ? 'Featured' : 'Not Featured'}</li>
+                        </ul>
+
                         <div class='product-links'>
                             <!-- Edit Link -->
-                            <a href='product.html?id=${productID}' class='edit-link'>
+                            <a href='edit-product.html?id=${productID}' class='edit-link'>
                                 <i class='fas fa-edit'></i>
                             </a>
 
@@ -57,10 +71,15 @@ productsDOM.addEventListener('click', async (e) => {
 // Form
 formDOM.addEventListener('submit', async (e) => {
     e.preventDefault(); // Prevents the submit button from refreshing the page
-    const name = productInputDOM.value
+
+    const name = nameInputDOM.value;
+    const price = priceInputDOM.value;
+    const rating = ratingInputDOM.value;
+    const company = companyInputDOM.value;
+    const featured = featuredInputDOM.checked;
 
     try {
-        await axios.post('/api/v1/products', {name})
+        await axios.post('/api/v1/products', { name, price, rating, company, featured });
         showProducts();
         productInputDOM.value = '';
         formAlertDOM.style.display = 'block';
