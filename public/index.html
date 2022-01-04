@@ -10,21 +10,22 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css' />
     <!-- Created CSS -->
     <link rel='stylesheet' href='./normalize.css'>
-    <!-- <link rel='stylesheet' href='./main.css'> -->
+    <link rel='stylesheet' href='./main.css'>
 
     <title>Product Manager</title>
 </head>
 <body>
     <!-- Product Creation Form -->
     <form class='product-form'>
-        <h4>Product Manager</h4>
+        <h4>Create a new Product</h4>
 
         <label for='name'>Name:</label>
         <input type='text' name='name' class='name-input' placeholder='ex: wash dishes' /><br>
         <label for='price'>Price:</label>
         <input type='text' name='price' class='price-input' placeholder='ex: 119.99' /><br>
         <label for='rating'>Rating:</label>
-        <input type='text' name='rating' class='rating-input' placeholder='ex: 4.3' /><br>
+        <p id='ratingValue'>3.0</p>
+        <input type="range" name='rating' class='rating-input' min="10" max="50" value="30" oninput="sliderChange(this.value)" /><br>
         <label for='company'>Company:</label>
         <input type='text' name='company' class='company-input' placeholder='ex: Puma' /><br>
         <label for='featured'>Featured:</label>
@@ -45,5 +46,12 @@
         integrity='sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=='
         crossorigin='anonymous' referrerpolicy='no-referrer'></script>
     <script src='./browser-app.js'></script>
+
+    <!-- JS -->
+    <script>
+        function sliderChange(n) {
+            document.getElementById('ratingValue').innerHTML = (n/10).toFixed(1);
+        }
+    </script>
 </body>
 </html>
