@@ -1,0 +1,11 @@
+.inline {
+    width: 10%;
+    display: inline;
+}
+.margin-top {
+    margin-top: 1rem;
+}
+.rating-input {
+    width: 80%;
+    display: inline;
+}

@@ -28,7 +28,7 @@ const showProducts = async () => {
                         <h5>${name}</h5>
                         <ul>
                             <li>$${price}</li>
-                            <li>${rating}/5</li>
+                            <li>${(rating/10).toFixed(1)}/5.0</li>
                             <li>${company}</li>
                             <li>${featured ? 'Featured' : 'Not Featured'}</li>
                         </ul>

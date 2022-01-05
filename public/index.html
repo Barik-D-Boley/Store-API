@@ -11,6 +11,7 @@
     <!-- Created CSS -->
     <link rel='stylesheet' href='./normalize.css'>
     <link rel='stylesheet' href='./main.css'>
+    <link rel='stylesheet' href='./new.css'>
 
     <title>Product Manager</title>
 </head>
@@ -20,18 +21,22 @@
         <h4>Create a new Product</h4>
 
         <label for='name'>Name:</label>
-        <input type='text' name='name' class='name-input' placeholder='ex: wash dishes' /><br>
-        <label for='price'>Price:</label>
-        <input type='text' name='price' class='price-input' placeholder='ex: 119.99' /><br>
-        <label for='rating'>Rating:</label>
-        <p id='ratingValue'>3.0</p>
-        <input type="range" name='rating' class='rating-input' min="10" max="50" value="30" oninput="sliderChange(this.value)" /><br>
-        <label for='company'>Company:</label>
-        <input type='text' name='company' class='company-input' placeholder='ex: Puma' /><br>
-        <label for='featured'>Featured:</label>
-        <input type='checkbox' name='featured' class='featured-input' /><br>
-        <button type='submit' class='button submit-btn'>Submit</button>
+        <input type='text' name='name' class='name-input' placeholder='Air Force 1' /><br>
 
+        <label for='price' class='margin-top'>Price:</label>
+        <input type='text' name='price' class='price-input' placeholder='159.99' /><br>
+
+        <label for='rating' class='inline margin-top'>Rating:</label>
+        <p id='ratingValue' class='inline margin-top'>3.0</p>
+        <input type='range' name='rating' class='rating-input' min='10' max='50' value='30' oninput='sliderChange(this.value)' /><br>
+
+        <label for='company'>Company:</label>
+        <input type='text' name='company' class='company-input' placeholder='Nike' /><br>
+
+        <label for='featured' class='inline margin-top'>Featured:</label>
+        <input type='checkbox' name='featured' class='featured-input inline featured-top' /><br>
+
+        <button type='submit' class='button submit-btn margin-top'>Submit</button>
         <div class='form-alert'></div>
     </form>
     

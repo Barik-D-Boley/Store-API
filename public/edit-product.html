@@ -34,8 +34,11 @@
             </div>
 
             <div class='form-control'>
-                <label for='rating'>Rating</label>
-                <input type='text' name='rating' class='product-edit-rating'>
+                <!-- <label for='rating'>Rating</label>
+                <input type='text' name='rating' class='product-edit-rating'> -->
+                <label for='rating' class='inline margin-top'>Rating</label>
+                <p id='ratingValue' class='inline margin-top'>3.0</p>
+                <input type='range' name='rating' class='rating-input' min='10' max='50' oninput='sliderChange(this.value)' /><br>
             </div>
 
             <div class='form-control'>
@@ -59,5 +62,12 @@
         integrity='sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=='
         crossorigin='anonymous' referrerpolicy='no-referrer'></script>
     <script src='./edit-product.js'></script>
+
+    <!-- JS -->
+    <script>
+        function sliderChange(n) {
+            document.getElementById('ratingValue').innerHTML = (n / 10).toFixed(1);
+        }
+    </script>
 </body>
 </html>
