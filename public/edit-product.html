@@ -11,6 +11,7 @@
     <!-- Created CSS -->
     <link rel='stylesheet' href='./normalize.css'>
     <link rel='stylesheet' href='./main.css'>
+    <!-- <link rel='stylesheet' href='./new.css'> -->
 
     <title>Product Editor</title>
 </head>
@@ -18,7 +19,7 @@
     <div class='container'>
         <form class='single-product-form'>
             <h4>Edit Product</h4>
-            <div class='formal-control'>
+            <div class='form-control'>
                 <label>Product ID</label>
                 <p class='product-edit-id'></p>
             </div>
@@ -28,17 +29,16 @@
                 <input type='text' name='name' class='product-edit-name'>
             </div>
 
-            <div class='form-control'>
+            <div class='price-control'>
                 <label for='price'>Price</label>
+                <p>$</p>
                 <input type='text' name='price' class='product-edit-price'>
             </div>
 
-            <div class='form-control'>
-                <!-- <label for='rating'>Rating</label>
-                <input type='text' name='rating' class='product-edit-rating'> -->
+            <div class='rating-control'>
                 <label for='rating' class='inline margin-top'>Rating</label>
-                <p id='ratingValue' class='inline margin-top'>3.0</p>
-                <input type='range' name='rating' class='rating-input' min='10' max='50' oninput='sliderChange(this.value)' /><br>
+                <p id='ratingValue' class='inline margin-top'></p>
+                <input id='slider' type='range' name='rating' class='rating-input product-edit-rating slider' min='10' max='50' oninput='sliderChange(this.value)' />
             </div>
 
             <div class='form-control'>
@@ -68,6 +68,10 @@
         function sliderChange(n) {
             document.getElementById('ratingValue').innerHTML = (n / 10).toFixed(1);
         }
+        setTimeout(function starterRating(n) {
+            console.log(document.getElementById('slider').value);
+            document.getElementById('ratingValue').innerHTML = (document.getElementById('slider').value / 10).toFixed(1);
+        }, 100)
     </script>
 </body>
 </html>

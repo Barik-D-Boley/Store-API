@@ -26,7 +26,7 @@ const ProductSchema = new mongoose.Schema({
     company: {
         type: String,
         required: [true, 'Must provide a company name'],
-        enum: { values: ['nike', 'terraria', 'yeezy', 'adidas', 'puma'], message: '{VALUE} is not supported' }
+        enum: { values: ['Nike', 'Terraria', 'Yeezy', 'Adidas', 'Puma'], message: '{VALUE} is not supported' }
     }
 });
 

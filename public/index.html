@@ -24,17 +24,24 @@
         <input type='text' name='name' class='name-input' placeholder='Air Force 1' /><br>
 
         <label for='price' class='margin-top'>Price:</label>
-        <input type='text' name='price' class='price-input' placeholder='159.99' /><br>
+        <p style='display: inline;'>$</p>
+        <input style='display: inline; width: 96%' type='text' name='price' class='price-input' placeholder='159.99' /><br>
 
-        <label for='rating' class='inline margin-top'>Rating:</label>
-        <p id='ratingValue' class='inline margin-top'>3.0</p>
-        <input type='range' name='rating' class='rating-input' min='10' max='50' value='30' oninput='sliderChange(this.value)' /><br>
+        <div id='rating-box'>
+            <label for='rating' class='inline margin-top'>Rating:</label>
+            <p id='ratingValue' class='inline margin-top'>3.0</p>
+            <input class='slider' type='range' name='rating' class='rating-input' min='10' max='50' value='30' oninput='sliderChange(this.value)' /><br>
+        </div>
 
-        <label for='company'>Company:</label>
+        <label for='company' style='display: inline;'>Company:  </label>
+        <a class='info-icon' onclick='hideInfo()'>&#9432;</a>
+        <p id='company-warning' style='display: none;'>The only accepted company names are: Nike, Terraria, Yeezy, Adidas, or Puma</p>
         <input type='text' name='company' class='company-input' placeholder='Nike' /><br>
 
-        <label for='featured' class='inline margin-top'>Featured:</label>
-        <input type='checkbox' name='featured' class='featured-input inline featured-top' /><br>
+        <div id='featured-box'>
+            <label for='featured' class='inline margin-top'>Featured:</label>
+            <input type='checkbox' name='featured' class='featured-input inline featured-top' /><br>
+        </div>
 
         <button type='submit' class='button submit-btn margin-top'>Submit</button>
         <div class='form-alert'></div>
@@ -56,6 +63,13 @@
     <script>
         function sliderChange(n) {
             document.getElementById('ratingValue').innerHTML = (n/10).toFixed(1);
+        }
+        function hideInfo() {
+            if (document.getElementById('company-warning').style.display !== 'none') {
+                document.getElementById('company-warning').style.display = 'none';
+            } else {
+                document.getElementById('company-warning').style.display = 'inline';
+            }
         }
     </script>
 </body>

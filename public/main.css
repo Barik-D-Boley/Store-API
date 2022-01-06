@@ -419,6 +419,24 @@ form > :last-child {
     margin-bottom: 0.75rem;
 }
 
+.price-control {
+    display: grid;
+    grid-template-columns: 150px 0 1fr;
+    align-items: center;
+    justify-items: start;
+    gap: 0 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.rating-control {
+    display: grid;
+    grid-template-columns: 150px 20px 1fr;
+    align-items: center;
+    justify-items: start;
+    gap: 0 1rem;
+    margin-bottom: 0.75rem;
+}
+
 .single-product-form label {
     margin-bottom: 0;
     font-size: 1rem;
@@ -443,4 +461,7 @@ form > :last-child {
 .single-product-form .form-alert {
     text-align: center;
     margin-top: 1rem;
+}
+.slider {
+    padding: 0.375rem 0;
 }

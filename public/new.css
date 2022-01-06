@@ -5,7 +5,35 @@
 .margin-top {
     margin-top: 1rem;
 }
+#rating-box {
+    margin: .8rem 0;
+    margin-bottom: 0;
+}
 .rating-input {
     width: 80%;
+    float: right;
     display: inline;
+}
+#edit-rating-box {
+    display: inline;
+}  
+#featured-box {
+    margin-top: .8rem;
+}
+.info-icon {
+    font-size: .8rem;
+    display: inline;
+    color: blue;
+    border: none;
+    background-color: white;
+}
+.info-icon:hover {
+    cursor: pointer;
+}
+#company-warning {
+    color: gray;
+    font-size: .6rem;
+}
+.company-input {
+    margin-top: .4rem;
 }
