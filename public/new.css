@@ -10,9 +10,9 @@
     margin-bottom: 0;
 }
 .rating-input {
-    width: 80%;
+    /* width: 80%;
     float: right;
-    display: inline;
+    display: inline; */
 }
 #edit-rating-box {
     display: inline;
