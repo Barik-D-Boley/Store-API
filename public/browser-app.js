@@ -21,16 +21,19 @@ const showProducts = async () => {
             loadingDOM.style.visibility = 'hidden';
             return;
         }
+
+        let id = 0;
+
         const allProducts = products.map((product) => {
             const { _id: productID, name, price, rating, company, featured } = product;
-            
-            return `<div class='single-product'>
-                        <h5>${name}</h5>
-                        <ul>
+
+            /* ${featured ? document.getElementById(id).classList.add('featured-product') : ''} */
+            return `<div class=${featured ? 'featured-product' : 'single-product'} id=${++id}>
+                        <h5 class='product-name'>${name}</h5>
+                        <ul class='product-info'>
+                            <li><strong>${company}</strong></li>
                             <li>$${price.toFixed(2)}</li>
                             <li>${(rating/10).toFixed(1)}/5.0</li>
-                            <li>${company}</li>
-                            <li>${featured ? 'Featured' : 'Not Featured'}</li>
                         </ul>
 
                         <div class='product-links'>
@@ -81,13 +84,12 @@ formDOM.addEventListener('submit', async (e) => {
     try {
         await axios.post('/api/v1/products', { name, price, rating, company, featured });
         showProducts();
-        productInputDOM.value = '';
         formAlertDOM.style.display = 'block';
         formAlertDOM.textContent = 'Successfully added product';
         formAlertDOM.classList.add('text-success');
     } catch (error) {
         formAlertDOM.style.display = 'block';
-        formAlertDOM.innerHTML = 'An error occurred, please try again.'
+        formAlertDOM.innerHTML = `An error occurred, please try again.`;
     }
     setTimeout(() => {
         formAlertDOM.style.display = 'none';

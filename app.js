@@ -6,6 +6,9 @@ const { connect } = require('./routes/products');
 // const populateProducts = require('./populate');
 require('dotenv').config();
 
+const notFound = require('./middleware/not-found');
+// const errorHandler = require('./middleware/error-handler');
+
 const port = 5000;
 
 // Middleware
@@ -13,10 +16,12 @@ app.use(express.json());
 app.use('/api/v1/products', products);
 app.use(express.static('public'));
 
+app.use(notFound);
+// app.use(errorHandler);
+
 const start = async () => {
     try {
         await connectDB(process.env.MONGO_URI);
-        // await populateProducts();
         app.listen(port, console.log(`Server is listening on port ${port}`));
     } catch (error) { console.log(error) }
 }

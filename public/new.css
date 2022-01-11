@@ -1,3 +1,12 @@
+nav {
+    margin: 1.5rem 2rem;
+    top: 0;
+}
+.nav-item {
+    margin-right: 1rem;
+    color: blue;
+}
+
 .inline {
     width: 10%;
     display: inline;
@@ -36,4 +45,60 @@
 }
 .company-input {
     margin-top: .4rem;
+}
+
+.featured-product {
+    border-left: solid .5rem green;
+    padding: 1rem 2.5rem 1rem 2rem;
+    background: var(--white);
+    border-radius: var(--borderRadius);
+    box-shadow: var(--shadow-2);
+    transition: var(--transition);
+    display: flex; 
+    align-items: center;
+}
+.featured-product:hover {
+    box-shadow: var(--shadow-4);
+}
+.featured-product h5 {
+    margin-bottom: 0;
+}
+.featured-product span {
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-left: -1.25rem;
+    margin-right: 1.5rem;
+}
+.featured-product .fa-check-circle {
+    font-size: 1rem;
+    color: var(--green-dark);
+    visibility: hidden;
+}
+
+.product-name {
+    width: 65%;
+}
+.product-info {
+    width: 25%;
+}
+.product-links {
+    display: flex;
+    align-items: center;
+    gap: 0 0.5rem;
+    width: 10%;
+}
+
+/* Read Me */
+#readme-title {
+    margin-top: 2rem;
+    text-align: center;
+}
+a:hover {
+  color: darkblue;
+}
+
+#submit-div {
+    display: flex;
+    justify-content: center;
 }

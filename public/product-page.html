@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <!-- Favicon -->
+    <link rel='shortcut icon' href='./favicon.ico' type='image/x-icon'>
+    <!-- Font Awesome -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css' />
+    <!-- Created CSS -->
+    <link rel='stylesheet' href='./normalize.css'>
+    <link rel='stylesheet' href='./main.css'>
+    <link rel='stylesheet' href='./new.css'>
+
+    <title>Product Manager</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav  style='position: fixed;'>
+        <a href='index.html' class='nav-item'>Homepage</a>
+        <a href='product-page.html' class='nav-item'>Product Page</a>
+    </nav>
+
+    <!-- Product Creation Form -->
+    <form class='product-form'>
+        <h4>Create a new Product</h4>
+
+        <!-- Name Input -->
+        <label for='name'>Name:</label>
+        <input type='text' name='name' class='name-input' placeholder='Air Force 1' /><br>
+
+        <!-- Price Input -->
+        <label for='price' class='margin-top'>Price:</label>
+        <p style='display: inline;'>$</p>
+        <input style='display: inline; width: 96%' type='number' step='0.01' name='price' class='price-input' placeholder='159.99' /><br>
+
+        <!-- Rating Slider -->
+        <div id='rating-box'>
+            <label for='rating' class='inline margin-top'>Rating:</label>
+            <p id='ratingValue' class='inline margin-top'>3.0</p>
+            <input class='slider rating-input' type='range' name='rating' min='10' max='50' value='30'
+                oninput='sliderChange(this.value)' /><br>
+        </div>
+
+        <!-- Company Input -->
+        <label for='company' style='display: inline;'>Company:</label>
+        <a class='info-icon' onclick='hideInfo()'>&#9432;</a>
+        <p id='company-warning' style='display: none;'>The only accepted company names are: Nike, Terraria, Yeezy,
+            Adidas, or Puma</p>
+        <input type='text' name='company' class='company-input' placeholder='Nike' /><br>
+
+        <!-- Featured Checkbox -->
+        <div id='featured-box'>
+            <label for='featured' class='inline margin-top'>Featured:</label>
+            <input type='checkbox' name='featured' class='featured-input inline featured-top' /><br>
+        </div>
+
+        <div id='submit-div'>
+            <!-- Submit Button -->
+            <button type='submit' class='submit-btn button margin-top'>Submit</button>
+        </div>
+        <div class='form-alert'></div>
+    </form>
+
+    <!-- Current Products -->
+    <section class='products-container'>
+        <p class='loading-text'>Loading...</p>
+        <div class='products'></div>
+    </section>
+
+    <!-- Axios -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js'
+        integrity='sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=='
+        crossorigin='anonymous' referrerpolicy='no-referrer'></script>
+    <script src='./browser-app.js'></script>
+
+    <!-- JS -->
+    <script>
+        function sliderChange(n) {
+            document.getElementById('ratingValue').innerHTML = (n / 10).toFixed(1);
+        }
+        function hideInfo() {
+            if (document.getElementById('company-warning').style.display !== 'none') {
+                document.getElementById('company-warning').style.display = 'none';
+            } else {
+                document.getElementById('company-warning').style.display = 'inline';
+            }
+        }
+    </script>
+</body>
+
+</html>

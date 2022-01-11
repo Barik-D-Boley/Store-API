@@ -347,7 +347,6 @@ form > :last-child {
     box-shadow: var(--shadow-2);
     transition: var(--transition);
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 .single-product:hover {
@@ -378,11 +377,6 @@ form > :last-child {
     visibility: hidden;
 }
 /* Task Links */
-.product-links {
-    display: flex;
-    align-items: center;
-    gap: 0 0.5rem;
-}
 .delete-btn,
 .edit-link {
     background: transparent;

@@ -1,0 +1,42 @@
+code {
+  color: white;
+}
+
+code.black {
+  background-color: black;
+}
+
+a {
+  color: gray;
+  text-decoration: none;
+}
+
+.url {
+  color: #0058fc;
+  background-color: lightgray;
+}
+.url:hover {
+  color: #6299ff;
+  cursor: pointer;
+}
+
+.codeBox {
+  background-color: black;
+  padding: 1rem;
+  border-radius: 0.3rem;
+}
+
+.indent {
+  color: black;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#documentation {
+    width: 80%;
+    margin: 0 auto;
+    justify-content: center;
+}

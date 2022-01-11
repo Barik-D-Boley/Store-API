@@ -12,65 +12,58 @@
     <link rel='stylesheet' href='./normalize.css'>
     <link rel='stylesheet' href='./main.css'>
     <link rel='stylesheet' href='./new.css'>
+    <link rel='stylesheet' href='./readme.css'>
 
-    <title>Product Manager</title>
+    <title>Store API Homepage</title>
 </head>
 <body>
-    <!-- Product Creation Form -->
-    <form class='product-form'>
-        <h4>Create a new Product</h4>
+    <nav>
+        <a href='index.html' class='nav-item'>Homepage</a>
+        <a href='product-page.html' class='nav-item'>Product Page</a>
+    </nav>
 
-        <label for='name'>Name:</label>
-        <input type='text' name='name' class='name-input' placeholder='Air Force 1' /><br>
+    <div id='documentation'>
+        <h1 id='readme-title'>Read Me</h1>
 
-        <label for='price' class='margin-top'>Price:</label>
-        <p style='display: inline;'>$</p>
-        <input style='display: inline; width: 96%' type='text' name='price' class='price-input' placeholder='159.99' /><br>
-
-        <div id='rating-box'>
-            <label for='rating' class='inline margin-top'>Rating:</label>
-            <p id='ratingValue' class='inline margin-top'>3.0</p>
-            <input class='slider' type='range' name='rating' class='rating-input' min='10' max='50' value='30' oninput='sliderChange(this.value)' /><br>
-        </div>
-
-        <label for='company' style='display: inline;'>Company:</label>
-        <a class='info-icon' onclick='hideInfo()'>&#9432;</a>
-        <p id='company-warning' style='display: none;'>The only accepted company names are: Nike, Terraria, Yeezy, Adidas, or Puma</p>
-        <input type='text' name='company' class='company-input' placeholder='Nike' /><br>
-
-        <div id='featured-box'>
-            <label for='featured' class='inline margin-top'>Featured:</label>
-            <input type='checkbox' name='featured' class='featured-input inline featured-top' /><br>
-        </div>
-
-        <button type='submit' class='button submit-btn margin-top'>Submit</button>
-        <div class='form-alert'></div>
-    </form>
+        <h2>Documentation</h2>
+        <p>Using node to get data from the API</p>
+        <p>This example requires node and nodemon to be downloaded to the project. Type <code class='black'>npm i node</code>and <code class='black'>npm i nodemon</code> into your IDE's terminal to download node and nodemon.</p>
+        <div class='codeBox'>
+            <code>
+                const express = require('express')<br>
+                const app = express()<br>
+                const { menu } = require('./data');<br>
+                // Change './data' to whatever the file path is to your data.js file<br>
+                // For example, if the data.js file is in a folder called 'util', type './util/data' into the require statement<br><br>
     
-    <!-- Current Products -->
-    <section class='products-container'>
-        <p class='loading-text'>Loading...</p>
-        <div class='products'></div>
-    </section>
-
-    <!-- Axios -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js'
-        integrity='sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=='
-        crossorigin='anonymous' referrerpolicy='no-referrer'></script>
-    <script src='./browser-app.js'></script>
-
-    <!-- JS -->
-    <script>
-        function sliderChange(n) {
-            document.getElementById('ratingValue').innerHTML = (n/10).toFixed(1);
-        }
-        function hideInfo() {
-            if (document.getElementById('company-warning').style.display !== 'none') {
-                document.getElementById('company-warning').style.display = 'none';
-            } else {
-                document.getElementById('company-warning').style.display = 'inline';
-            }
-        }
-    </script>
+                // Returns all items in the object<br>
+                app.get('/name', (req, res) => {<br>
+                <span class='indent'>----</span>const newProducts = menu.map((item) => {<br>
+                <span class='indent'>--------</span>const { id, toGoFave, glutenFree, itemType, category, name, price, calories, description } = item<br>
+                <span class='indent'>--------</span>return { id, toGoFave, glutenFree, itemType, category, name, price, calories, description }<br>
+                <span class='indent'>--------</span> // Only put items into the object that you plan on using later<br>
+                <span class='indent'>----</span>})<br><br>
+                
+                <span class='indent'>----</span>res.json(newProducts);<br>
+                })<br><br>
+    
+                // Returns all items in the category (specified by the variable inputted into the url)<br>
+                app.get('/api/menu/category/:category', (req, res) => {<br>
+                <span class='indent'>----</span>const { category } = req.params;<br>
+                <span class='indent'>----</span>let items = menu.filter(item => item.category.toLowerCase() == category);<br>
+                <span class='indent'>----</span>const newProducts = items.map((item) => {<br>
+                <span class='indent'>--------</span>const { id, toGoFave, glutenFree, itemType, category, name, price, calories, description } = item<br>
+                <span class='indent'>--------</span>return { id, toGoFave, glutenFree, itemType, category, name, price, calories, description }<br>
+                <span class='indent'>----</span>})<br><br>
+                
+                <span class='indent'>----</span>res.json(newProducts);<br>
+                })<br><br>
+    
+                app.listen(5000, () => {<br>
+                <span class='indent'>----</span>console.log('Server is listening on port 5000....');<br>
+                })<br>
+            </code>
+        </div>
+    </div>
 </body>
 </html>
