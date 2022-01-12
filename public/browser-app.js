@@ -27,7 +27,6 @@ const showProducts = async () => {
         const allProducts = products.map((product) => {
             const { _id: productID, name, price, rating, company, featured } = product;
 
-            /* ${featured ? document.getElementById(id).classList.add('featured-product') : ''} */
             return `<div class=${featured ? 'featured-product' : 'single-product'} id=${++id}>
                         <h5 class='product-name'>${name}</h5>
                         <ul class='product-info'>

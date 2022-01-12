@@ -18,11 +18,6 @@ nav {
     margin: .8rem 0;
     margin-bottom: 0;
 }
-.rating-input {
-    /* width: 80%;
-    float: right;
-    display: inline; */
-}
 #edit-rating-box {
     display: inline;
 }  
@@ -90,10 +85,6 @@ nav {
 }
 
 /* Read Me */
-#readme-title {
-    margin-top: 2rem;
-    text-align: center;
-}
 a:hover {
   color: darkblue;
 }
@@ -101,4 +92,22 @@ a:hover {
 #submit-div {
     display: flex;
     justify-content: center;
+}
+.max-width-override {
+    max-width: none;
+}
+.url {
+    display: inline;
+    color: white;
+    background-color: #222222;
+    padding: .1rem .2rem;
+}
+
+#page-navigation {
+    position: fixed;
+    top: 34%;
+    left: 2rem;
+    font-size: .8rem;
+    text-align: center;
+    line-height: 3rem;
 }

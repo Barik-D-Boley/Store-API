@@ -16,52 +16,148 @@
 
     <title>Store API Homepage</title>
 </head>
-<body>
+<body style="margin-bottom: 2rem;">
     <nav>
         <a href='index.html' class='nav-item'>Homepage</a>
         <a href='product-page.html' class='nav-item'>Product Page</a>
     </nav>
 
-    <div id='documentation'>
-        <h1 id='readme-title'>Read Me</h1>
+    <div id='page-navigation'>
+        <a href="#get-all">Get all Shoes</a><br>
+        <a href="#get-one">Get One Shoe</a><br>
+        <a href="#add-shoe">Add a Shoe</a><br>
+        <a href="#update-shoe">Update a Shoe</a><br>
+        <a href="#delete-shoe">Delete a Shoe</a>
+    </div>
 
+    <div id='documentation'>
         <h2>Documentation</h2>
         <p>Using node to get data from the API</p>
-        <p>This example requires node and nodemon to be downloaded to the project. Type <code class='black'>npm i node</code>and <code class='black'>npm i nodemon</code> into your IDE's terminal to download node and nodemon.</p>
+        <p class='max-width-override'>This example requires node and nodemon to be downloaded to the project. Type <code class='black'>npm i node</code> and <code class='black'>npm i nodemon</code> into your IDE's terminal to download node and nodemon.</p>
+
+        <!-- Get all Shoes -->
+        <h2 id='get-all'>Get all Shoes</h2>
+        <p class='max-width-override' style='display: inline;'>To get every shoe in the api, go to the url and replace <p class='url'>/index.html</p> with <p class="url">/api/v1/products</p></p>
+        <p class="max-width-override">The response should look similar to this:</p>
         <div class='codeBox'>
             <code>
-                const express = require('express')<br>
-                const app = express()<br>
-                const { menu } = require('./data');<br>
-                // Change './data' to whatever the file path is to your data.js file<br>
-                // For example, if the data.js file is in a folder called 'util', type './util/data' into the require statement<br><br>
-    
-                // Returns all items in the object<br>
-                app.get('/name', (req, res) => {<br>
-                <span class='indent'>----</span>const newProducts = menu.map((item) => {<br>
-                <span class='indent'>--------</span>const { id, toGoFave, glutenFree, itemType, category, name, price, calories, description } = item<br>
-                <span class='indent'>--------</span>return { id, toGoFave, glutenFree, itemType, category, name, price, calories, description }<br>
-                <span class='indent'>--------</span> // Only put items into the object that you plan on using later<br>
-                <span class='indent'>----</span>})<br><br>
-                
-                <span class='indent'>----</span>res.json(newProducts);<br>
-                })<br><br>
-    
-                // Returns all items in the category (specified by the variable inputted into the url)<br>
-                app.get('/api/menu/category/:category', (req, res) => {<br>
-                <span class='indent'>----</span>const { category } = req.params;<br>
-                <span class='indent'>----</span>let items = menu.filter(item => item.category.toLowerCase() == category);<br>
-                <span class='indent'>----</span>const newProducts = items.map((item) => {<br>
-                <span class='indent'>--------</span>const { id, toGoFave, glutenFree, itemType, category, name, price, calories, description } = item<br>
-                <span class='indent'>--------</span>return { id, toGoFave, glutenFree, itemType, category, name, price, calories, description }<br>
-                <span class='indent'>----</span>})<br><br>
-                
-                <span class='indent'>----</span>res.json(newProducts);<br>
-                })<br><br>
-    
-                app.listen(5000, () => {<br>
-                <span class='indent'>----</span>console.log('Server is listening on port 5000....');<br>
-                })<br>
+                {<br>
+                <span class='indent'>----</span>{<br>
+                <span class='indent'>--------</span>"name": "Air Vapormax 2021 FK",<br>
+                <span class='indent'>--------</span>"price": 200,<br>
+                <span class='indent'>--------</span>"rating": 4.9,<br>
+                <span class='indent'>--------</span>"company": "nike"<br>
+                <span class='indent'>----</span>},<br>
+                <span class='indent'>----</span>{<br>
+                <span class='indent'>--------</span>"name": "Air Max 90",<br>
+                <span class='indent'>--------</span>"price": 120,<br>
+                <span class='indent'>--------</span>"rating": 4.8,<br>
+                <span class='indent'>--------</span>"company": "nike"<br>
+                <span class='indent'>----</span>},<br>
+                <span class='indent'>----</span>{<br>
+                <span class='indent'>--------</span>"name": "SB Zoom Blazer Mid Premium",<br>
+                <span class='indent'>--------</span>"price": 105,<br>
+                <span class='indent'>--------</span>"featured": true,<br>
+                <span class='indent'>--------</span>"rating": 4.3,<br>
+                <span class='indent'>--------</span>"company": "nike"<br>
+                <span class='indent'>----</span>},<br>
+                <span class='indent'>----</span>{<br>
+                <span class='indent'>--------</span>"name": "Air Force 1",<br>
+                <span class='indent'>--------</span>"price": 160,<br>
+                <span class='indent'>--------</span>"rating": 4.7,<br>
+                <span class='indent'>--------</span>"company": "nike"<br>
+                <span class='indent'>----</span>},<br>
+                <span class='indent'>----</span>{<br>
+                <span class='indent'>--------</span>"name": "Air Max 90 SE",<br>
+                <span class='indent'>--------</span>"price": 130,<br>
+                <span class='indent'>--------</span>"rating": 0,<br>
+                <span class='indent'>--------</span>"company": "nike"<br>
+                <span class='indent'>----</span>}<br>
+                }
+            </code>
+        </div>
+
+        <!-- Get a Specific Shoe -->
+        <h2 id='get-one' class='margin-top'>Get a Specific Shoe</h2>
+        <p class='max-width-override' style='display: inline;'>To get a single shoe in the api, go to the url and replace <p class='url'>/index.html</p> with <p class="url">/api/v1/products/:id</p>. ":id" is the specific id from the shoe, which can be found in the products list.</p>
+        <p class="max-width-override">The response should look similar to this:</p>
+        <div class='codeBox'>
+            <code>
+                {<br>
+                <span class='indent'>----</span>"product": {<br>
+                <span class='indent'>--------</span>"_id": "61bbb0f62e02dcfeb9a60325",<br>
+                <span class='indent'>--------</span>"name": "SB Zoom Blazer Mid Premium",<br>
+                <span class='indent'>--------</span>"price": 105,<br>
+                <span class='indent'>--------</span>"featured": true,<br>
+                <span class='indent'>--------</span>"rating": 41,<br>
+                <span class='indent'>--------</span>"createdAt": "2021-12-16T21:34:45.445Z",<br>
+                <span class='indent'>--------</span>"company": "Nike",<br>
+                <span class='indent'>--------</span>"__v": 0<br>
+                <span class='indent'>----</span>}<br>
+                }
+            </code>
+        </div>
+
+        <!-- Add a Shoe to the API -->
+        <h2 id='add-shoe' class='margin-top'>Add a Shoe to the API</h2>
+        <p class='max-width-override' style='display: inline;'>The page needs information on it for the API to be able to post, so go to the <a href="product-page.html" class='nav-item' style='margin-right: 0;'>Product Page</a> to post a new shoe.</p>
+        <p class="max-width-override">The response should look similar to this:</p>
+        <div class='codeBox'>
+            <code>
+                {<br>
+                <span class='indent'>----</span>"product": {<br>
+                <span class='indent'>--------</span>"name": "*name*",<br>
+                <span class='indent'>--------</span>"price": *price*,<br>
+                <span class='indent'>--------</span>"featured": false,<br>
+                <span class='indent'>--------</span>"rating": *rating*,<br>
+                <span class='indent'>--------</span>"createdAt": "*Date Created*",<br>
+                <span class='indent'>--------</span>"company": "Nike",<br>
+                <span class='indent'>--------</span>"_id": "*id*",<br>
+                <span class='indent'>--------</span>"__v": 0<br>
+                <span class='indent'>----</span>}<br>
+                }
+            </code>
+        </div>
+
+        <!-- Update an Existing Shoe -->
+        <h2 id='update-shoe' class='margin-top'>Update an Existing Shoe</h2>
+        <p class='max-width-override' style='display: inline;'>The page needs information on it for the API to be able to post, so go to the <a href="product-page.html" class='nav-item' style='margin-right: 0;'>Product Page</a> to update an existing shoe.</p>
+        <p class="max-width-override">The response should look similar to this:</p>
+        <div class='codeBox'>
+            <code>
+                {<br>
+                <span class='indent'>----</span>"product": {<br>
+                <span class='indent'>--------</span>"_id": "61bbb0f62e02dcfeb9a60325",<br>
+                <span class='indent'>--------</span>"name": "SB Zoom Blazer Mid Premium",<br>
+                <span class='indent'>--------</span>"price": 105,<br>
+                <span class='indent'>--------</span>"featured": true,<br>
+                <span class='indent'>--------</span>"rating": 41,<br>
+                <span class='indent'>--------</span>"createdAt": "2021-12-16T21:34:45.445Z",<br>
+                <span class='indent'>--------</span>"company": "Nike",<br>
+                <span class='indent'>--------</span>"__v": 0<br>
+                <span class='indent'>----</span>}<br>
+                }
+            </code>
+        </div>
+        
+        <!-- Delete a Shoe -->
+        <h2 id='delete-shoe' class='margin-top'>Delete an Existing Shoe</h2>
+        <p class='max-width-override' style='display: inline;'>To delete a shoe from the api, go to the url and replace <p class='url'>/index.html</p> with <p class="url">/api/v1/products/:id</p>. ":id" is the specific id from the shoe, which can be found in the products list.</p>
+        <p class="max-width-override">The response should look similar to this:</p>
+        <div class='codeBox'>
+            <code>
+                {<br>
+                <span class='indent'>----</span>"product": {<br>
+                <span class='indent'>--------</span>"_id": "61df5d29680b00a069e494da",<br>
+                <span class='indent'>--------</span>"name": "Delete Me",<br>
+                <span class='indent'>--------</span>"price": 240,<br>
+                <span class='indent'>--------</span>"featured": false,<br>
+                <span class='indent'>--------</span>"rating": 31,<br>
+                <span class='indent'>--------</span>"createdAt": "2022-01-12T20:43:52.503Z",<br>
+                <span class='indent'>--------</span>"company": "Nike",<br>
+                <span class='indent'>--------</span>"__v": 0<br>
+                <span class='indent'>----</span>}<br>
+                }
             </code>
         </div>
     </div>

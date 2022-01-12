@@ -3,7 +3,7 @@ code {
 }
 
 code.black {
-  background-color: black;
+  background-color: #222222;
 }
 
 a {
@@ -11,23 +11,15 @@ a {
   text-decoration: none;
 }
 
-.url {
-  color: #0058fc;
-  background-color: lightgray;
-}
-.url:hover {
-  color: #6299ff;
-  cursor: pointer;
-}
-
 .codeBox {
-  background-color: black;
-  padding: 1rem;
+  background-color: #222222;
+  padding: 1.5rem 5rem;
   border-radius: 0.3rem;
+  font-size: .9rem;
 }
 
 .indent {
-  color: black;
+  color: #222222;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -38,5 +30,10 @@ a {
 #documentation {
     width: 80%;
     margin: 0 auto;
+    /* margin-left: 0; */
     justify-content: center;
+}
+.comment {
+    margin: 0;
+    color: gray;
 }
