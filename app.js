@@ -7,7 +7,7 @@ const { connect } = require('./routes/products');
 require('dotenv').config();
 
 const notFound = require('./middleware/not-found');
-// const errorHandler = require('./middleware/error-handler');
+const errorHandler = require('./middleware/error-handler');
 
 const port = 5000;
 
@@ -17,7 +17,7 @@ app.use('/api/v1/products', products);
 app.use(express.static('public'));
 
 app.use(notFound);
-// app.use(errorHandler);
+app.use(errorHandler);
 
 const start = async () => {
     try {
