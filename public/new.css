@@ -111,3 +111,7 @@ a:hover {
     text-align: center;
     line-height: 3rem;
 }
+
+.page-nav-item:hover {
+    color: #111111;
+}
