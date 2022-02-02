@@ -6,10 +6,10 @@ const { connect } = require('./routes/products');
 // const populateProducts = require('./populate');
 require('dotenv').config();
 
+const port = process.env.PORT || 5000;
+
 const notFound = require('./middleware/not-found');
 const errorHandler = require('./middleware/error-handler');
-
-const port = 5000;
 
 // Middleware
 app.use(express.json());
