@@ -87,6 +87,7 @@ formDOM.addEventListener('submit', async (e) => {
         formAlertDOM.textContent = 'Successfully added product';
         formAlertDOM.classList.add('text-success');
     } catch (error) {
+        console.log(error.response.data);
         formAlertDOM.style.display = 'block';
         formAlertDOM.innerHTML = `An error occurred, please try again.`;
     }
